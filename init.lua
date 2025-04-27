@@ -17,3 +17,17 @@ core.register_craft({
     output = "my_block:node 3",
     recipe = { "default:dirt", "default:stone" },
 })
+
+core.register_tool("my_block:pathfinder", {
+    description = "Finds path from player to selected block",
+    stack_max = 1,
+    inventory_image = "pathfinder.png",
+    on_place = function(itemstack, placer, pointed_thing),
+    on_secondary_use = function(itemstack, user, pointed_thing),
+})
+
+core.register_craft({
+    type = "shapeless",
+    output = "my_block:pathfinder 1",
+    recipe = { "default:dirt", "default:dirt" },
+})
